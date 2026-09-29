@@ -1,0 +1,4 @@
+import { Link } from "react-router-dom";
+import { PasswordLoginForm } from "../components/PasswordLoginForm";
+import styles from "./login.module.css";
+export default function Login(){return <main className={styles.page}><div className={styles.card}><img src="/_cdn/static/0747ec73-d19b-4258-a261-27c26d4b8c82-ghetto-choir-logo.png" alt="The Ghetto Choir UG"/><p className={styles.eyebrow}>ADMIN PORTAL</p><h1>Welcome back.</h1><p className={styles.copy}>Sign in to manage choir content, events and submissions.</p><PasswordLoginForm/><Link className={styles.back} to="/">← Back to website</Link></div></main>}
