@@ -1,0 +1,2 @@
+import {sessionUser,json} from "../../_shared";
+export const onRequestGet=async({request,env}:any)=>{const user=await sessionUser(request,env);return user?json({user}):json({error:"Not authenticated"})};

@@ -1,0 +1,1 @@
+export async function onRequest(context:any){try{return await context.next()}catch{return new Response("Server error",{status:500})}}

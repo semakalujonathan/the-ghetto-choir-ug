@@ -6,7 +6,7 @@ const links = [["/","Home"],["/about","About"],["/events","Events"],["/gallery",
 export function SiteNav(){
   const [open,setOpen]=useState(false);
   return <header className={styles.header}>
-    <Link to="/" className={styles.brand} onClick={()=>setOpen(false)}><img src="/_cdn/static/0747ec73-d19b-4258-a261-27c26d4b8c82-ghetto-choir-logo.png" alt="The Ghetto Choir UG"/></Link>
+    <Link to="/" className={styles.brand} onClick={()=>setOpen(false)}><img src="https://theghettochoirug.floot.app/_cdn/static/0747ec73-d19b-4258-a261-27c26d4b8c82-ghetto-choir-logo.png" alt="The Ghetto Choir UG"/></Link>
     <nav className={open ? styles.nav + " " + styles.open : styles.nav}>
       {links.map(([to,label])=><Link key={to} to={to} onClick={()=>setOpen(false)}>{label}</Link>)}
       <Link className={styles.admin} to="/admin" onClick={()=>setOpen(false)}>Admin</Link>

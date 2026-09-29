@@ -1,0 +1,1 @@
+import {json} from "../../_shared"; export const onRequestGet=async({env}:any)=>{const {results}=await env.DB.prepare("SELECT id,title,event_date AS eventDate,venue,description,created_at AS createdAt FROM events ORDER BY event_date ASC").all();return json({events:results||[]})};

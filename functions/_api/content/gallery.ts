@@ -1,0 +1,1 @@
+import {json} from "../../_shared"; export const onRequestGet=async({env}:any)=>{const {results}=await env.DB.prepare("SELECT id,image_url AS imageUrl,caption,featured,created_at AS createdAt FROM gallery ORDER BY featured DESC,created_at DESC").all();return json({photos:(results||[]).map((p:any)=>({...p,featured:Boolean(p.featured)}))})};
