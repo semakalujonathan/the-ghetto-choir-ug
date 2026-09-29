@@ -1,0 +1,5 @@
+import { useQuery } from "@tanstack/react-query";
+import { getEvents } from "../endpoints/content/events_GET.schema";
+import { PageShell } from "../components/PageShell";
+import styles from "./content.module.css";
+export default function Events(){const q=useQuery({queryKey:["events"],queryFn:getEvents});return <PageShell eyebrow="WHAT'S HAPPENING" title="Events & performances."><section className={styles.list}>{q.isFetching?<p>Loading events…</p>:q.data?.events.length===0?<p>No events published yet. Check back soon.</p>:q.data?.events.map(e=><article key={e.id} className={styles.event}><div><span>{new Date(e.eventDate).toLocaleDateString("en-UG",{day:"2-digit",month:"short",year:"numeric"})}</span><h2>{e.title}</h2><p>{e.description}</p></div><div><strong>{e.venue}</strong><small>{e.status}</small></div></article>)}</section></PageShell>}
